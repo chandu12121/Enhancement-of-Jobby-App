@@ -77,7 +77,7 @@ class JobItemDetails extends Component {
     if (response.ok === true) {
       const data = await response.json()
       // console.log(data)
-      const updatedData = this.getFormattedData(data.job_details)
+      const updatedData = this.getFormattedData(data.job_details)   //data.job_details is expected to be a single object, not an array, so .map() cannot be called.
       // console.log(updatedData)
       const updatedSimilarJobsData = data.similar_jobs.map(eachSimilarJob =>
         this.getFormattedSimilarData(eachSimilarJob),
